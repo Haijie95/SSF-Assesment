@@ -19,7 +19,7 @@ public class Order implements Serializable {
         @Min(value = 1, message = "Must have at least 1 pizza!")
         @Max(value = 10, message = "No more than 10 pizza can be ordered!")
         private String quantity;
-
+        
         public String getPizza() {
             return pizza;
         }
@@ -38,6 +38,5 @@ public class Order implements Serializable {
         public void setQuantity(String quantity) {
             this.quantity = quantity;
         }
-
         
 }

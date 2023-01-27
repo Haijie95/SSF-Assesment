@@ -1,9 +1,12 @@
 package haijie.PizzaOrderApp.models;
 
+import java.io.Serializable;
+import java.util.UUID;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class Delivery {
+public class Delivery implements Serializable {
     
     @NotNull(message = "Name must not be empty")
     @Size(min = 3, message = "Name must be at least 3 characters.")
@@ -20,6 +23,25 @@ public class Delivery {
     
     private String comments;
 
+    private String id;
+    private long orderCost;
+
+    public Delivery(){
+        this.id= UUID.randomUUID().toString();
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+    public long getOrderCost() {
+        return orderCost;
+    }
+    public void setOrderCost(long orderCost) {
+        this.orderCost = orderCost;
+    }
     public String getName() {
         return name;
     }

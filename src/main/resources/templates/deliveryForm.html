@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Order Delivery Details
+    </h1>
+    <form action="#"
+          data-th-action="@{/pizza/order}"
+          data-th-object="${delivery}"
+          method="post">
+      <div>
+        <table>
+          <tr>
+            <td>
+              Name:
+            </td>
+            <td>
+              <div>
+                <input type="text" data-th-field="*{name}" name="name">
+              </div>
+            </td>
+          </tr>
+          <span class="error" data-th-if="${#fields.hasErrors('name')}"
+					data-th-errors="*{name}"></span>
+          <tr>
+            <td>
+              Address:
+            </td>
+            <td>
+              <div>
+                <input type="text" data-th-field="*{address}" name="address">
+              </div>
+            </td>
+          </tr>
+          <span class="error" data-th-if="${#fields.hasErrors('address')}"
+					data-th-errors="*{address}"></span>
+          <tr>
+            <td>
+              Phone:
+            </td>
+            <td>
+              <div>
+                <input type="text" data-th-field="*{phone}" name="phone">
+              </div>
+            </td>
+          </tr>
+          <span class="error" data-th-if="${#fields.hasErrors('phone')}"
+					data-th-errors="*{phone}"></span>
+          <tr>
+            <td>
+              Rush:
+            </td>
+            <td>
+              <div>
+                <input type="checkbox" data-th-field="*{rush}" name="rush">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Comments:
+            </td>
+            <td>
+              <div>
+                <input type="textarea" data-th-field="*{comments}" name="comments">
+              </div>
+            </td>
+          </tr>
+          <tr>
+						<td>
+							<button type="button" onclick="history.go(-1)">Cancel Order</button>
+						</td>
+						<td>
+							<button type="submit">Place Order</button>
+						</td>
+					</tr>
+        </table>
+      </div>       
+    </form>
+</body>
+</html>

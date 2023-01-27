@@ -41,12 +41,12 @@ public class PizzaController {
 
     @GetMapping("{ordernumber}")
     public String getOrderById(Model model, @PathVariable String ordernumber) {
-        return "showContact";
+        return "showorder";
     }
 
     @GetMapping(path = "/list")
     public String getAllOrders(Model model) {
-        return "contacts";
+        return "orders";
     }
 
     

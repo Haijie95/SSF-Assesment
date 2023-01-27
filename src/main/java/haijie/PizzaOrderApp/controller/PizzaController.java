@@ -11,22 +11,20 @@ import haijie.PizzaOrderApp.models.Order;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping(path="")
+@RequestMapping(path="/pizza")
 public class PizzaController {
     
+
     @GetMapping
     public String showOrderForm(Model model){
         model.addAttribute("pizza", new Order());
         model.addAttribute("size", new Order());
         model.addAttribute("quantity", new Order());
-        return "";
+        return "index";
     }
 
     @PostMapping
     public String saveOrder(@Valid Order order,BindingResult binding, Model model){
-        if (binding.hasErrors()) {
-            return "";
-        }
         return "pizza";
     }
 

@@ -13,17 +13,18 @@
 			<h2>Panucci's Pizza</h2>
 		</div>
 
-		<form method="post" action="pizza">
+		<form 	th:object="${order}"
+				method="post">
 			<div>
 				<h2>Select a pizza</h2>
 				<table>
 					<tr>
-						<td>
+						<td >
 							<div>
 								<img src="/images/Bella.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="bella"> Bella
+								<input type="radio" th:field="*{pizza}" th:value="bella"> Bella
 							</div>
 						</td>
 						<td>
@@ -31,7 +32,7 @@
 								<img src="/images/Margherita.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="margherita"> Margherita
+								<input type="radio" th:field="*{pizza}" th:value="margherita" > Margherita
 							</div>
 						</td>
 						<td>
@@ -39,7 +40,7 @@
 								<img src="/images/Marinara.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="marinara"> Marinara
+								<input type="radio" th:field="*{pizza}" th:value="marinara" > Marinara
 							</div>
 						</td>
 						<td>
@@ -47,7 +48,7 @@
 								<img src="/images/SpianataCalabrese.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="spianatacalabrese"> Spianata Calabrese
+								<input type="radio" th:field="*{pizza}" th:value="spianatacalabrese" > Spianata Calabrese
 							</div>
 						</td>
 						<td>
@@ -55,25 +56,28 @@
 								<img src="/images/TrioFormaggio.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="trioformaggio"> Trio Formaggio
-							</div>
+								<input type="radio" th:field="*{pizza}" th:value="trioformaggio"  > Trio Formaggio
+							</div> 
 						</td>
+						
 					</tr>
 					<tr>
 						<td>Size:</td>
 						<td>
-							<select name="size" >
-								<option value="sm">Small</option>
-								<option value="md">Medium</option>
-								<option value="lg">Large</option>
+							<select th:field="*{size}" >
+								<option  th:value="sm">Small</option>
+								<option  th:value="md">Medium</option>
+								<option  th:value="lg">Large</option>
 							</select>
 						</td>
+						
 					</tr>
 					<tr>
 						<td>Quantity:</td>
 						<td>
-							<input type="number" min="1" name="quantity"> 
+							<input type="number" th:field="*{quantity}" min="1" > 
 						</td>
+						
 					</tr>
 					<tr>
 						<td></td>
